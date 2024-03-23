@@ -21,7 +21,7 @@ exports.geocoding = async (req, res) => {
 };
 exports.reverseGeocoding = async (req, res) => {
   try {
-    const { lat, lon, days } = req.body;
+    const { lat, lon, days } = req.query;
     if (!lat || !lon || !days) {
       return res
         .status(400)
