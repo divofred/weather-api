@@ -4,8 +4,8 @@ const router = express.Router();
 
 // Define your routes here
 
-router.get('/geo-coding', geocoding);
+router.post('/geo-coding', geocoding);
 
-router.get('/reverse-geo-coding', reverseGeocoding);
+router.post('/reverse-geo-coding', reverseGeocoding);
 
 module.exports = router;
