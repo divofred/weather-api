@@ -8,8 +8,8 @@ const options = {
   definition: {
     openapi: '3.0.0',
     info: {
-      title: 'Weather API',
-      version: '1.0.0',
+      title: 'Weather API', // Name of the API
+      version: '1.0.0', // Version of the API
       description: 'This is a weather API built with ExpressJS',
       contact: {
         name: 'OpenReplay',
@@ -19,15 +19,15 @@ const options = {
     },
     servers: [
       {
-        url: 'http://localhost:8080'
+        url: 'http://localhost:8080' // URL of the server
       }
     ]
   },
-  apis: ['./routes/*.js']
+  apis: ['./routes/*.js'] // Path to the API
 };
 
 const swaggerSpecs = swaggerJSDoc(options);
-app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
+app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpecs)); // Swagger UI route
 
 app.use(express.json());
 
