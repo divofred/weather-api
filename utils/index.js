@@ -84,7 +84,7 @@ exports.getWeatherforcast = async (city, lat, lon, days) => {
     return { city, forecast };
   } catch (error) {
     console.error('Error getting weather forecast:', error);
-    return { error: 'Error getting weather forecast' };
+    return { error: 'Error getting weather forecast: ' + error.error };
   }
 };
 
@@ -105,6 +105,6 @@ exports.getAddress = async (lat, lon) => {
     }
   } catch (error) {
     console.error('Error getting address:', error);
-    return { error: 'Error getting address' };
+    throw { error: 'Error getting address' };
   }
 };

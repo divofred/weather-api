@@ -30,6 +30,7 @@ const swaggerSpecs = swaggerJSDoc(options);
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpecs)); // Swagger UI route
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Define your routes here
 app.get('/', (req, res) => {
